@@ -8,39 +8,43 @@ using namespace sf;
 class Entity
 {
 protected:
-	Gstate prevstate;
-	int hp, score, shoot_time;
+	Gstate PrevState;
+	int hp, score, ShootTime;
 	float CurrentFrame;
 	Clock time;
 	bool life;
-	float speed, dx, dy, posX, posY;
+	float speed, dx, dy, PosX, PosY;
 	Gstate state;
-	enum { pers, shell } type;
+	Gtype type;
 	Texture texture;
 	Image image;
 	Sprite sprite;
 	int damage;
+	float N; // счетчик атаки
 
 public:
-	int getDamage();
-	void changePos(float,float);
-	void setstay();
-	float getspeed();
-	Gstate getState();
-	Sprite getimage();
-	FloatRect getRect();
-	virtual bool radiusDamage(float,float) = 0;
+	Gtype GetType();
+	FloatRect GetRect();
+	float GetN(); // получение значения счетчика атаки
+	void SetN(float); // изменение счетчика атаки
+	int GetDamage();
+	void ChangePos(float,float);
+	void SetStay();
+	float GetSpeed();
+	Gstate GetState();
+	Sprite GetImage();
+	virtual bool RadiusDamage(float,float) = 0;
 	virtual void update(float,float) = 0;
 	virtual void control() = 0;
-	virtual void setHP(int) = 0;
-	int getHP();
-	float getposX();
-	float getposY();
-	bool getLife();
-	void setLife(bool);
-	void setScore(int);
-	int getScore();
-	bool shoot_delay();
+	virtual void SetHp(int) = 0;
+	int GetHp();
+	float GetPosX();
+	float GetPosY();
+	bool GetLife();
+	void SetLife(bool);
+	void SetScore(int);
+	int GetScore();
+	bool ShootDelay();
 };
 
 #endif

@@ -80,18 +80,22 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="arrow.cpp" />
     <ClCompile Include="Entity.cpp" />
     <ClCompile Include="Hero.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="map_creator.cpp" />
     <ClCompile Include="grant.cpp" />
+    <ClCompile Include="tower_with_archer.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="arrow.h" />
     <ClInclude Include="Entity.h" />
     <ClInclude Include="globals.h" />
     <ClInclude Include="Hero.h" />
     <ClInclude Include="map_creator.h" />
     <ClInclude Include="grant.h" />
+    <ClInclude Include="tower_with_archer.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

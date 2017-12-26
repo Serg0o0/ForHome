@@ -6,11 +6,11 @@
 class Grant : public Entity
 {
 public:
-	Grant();
+	Grant(float, float);
 	void update(float,float);
 	void control();
-	void setHP(int);
-	bool radiusDamage(float,float);
+	void SetHp(int);
+	bool RadiusDamage(float,float);
 };
 
 #endif
